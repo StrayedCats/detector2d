@@ -29,9 +29,9 @@ namespace detector2d_node
     try
     {
       this->pose_pub_ = this->create_publisher<vision_msgs::msg::Detection2DArray>(
-          "positions", rclcpp::SystemDefaultsQoS());
+          "positions", 1);
       this->image_sub_ = this->create_subscription<sensor_msgs::msg::Image>(
-          "image_raw", rclcpp::SystemDefaultsQoS(), std::bind(&Detector2dNode::image_callback, this, std::placeholders::_1));
+          "image_raw", 1, std::bind(&Detector2dNode::image_callback, this, std::placeholders::_1));
     }
     catch (rclcpp::exceptions::RCLError &ex)
     {
