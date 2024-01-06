@@ -2,5 +2,5 @@ detector2d_parameters:
   load_target_plugin:
     type: string
     description: "load target plugin"
-    default_value: "detector2d_plugins::PublishCenter"
+    default_value: "detector2d_plugins::publish_detected_img"
 

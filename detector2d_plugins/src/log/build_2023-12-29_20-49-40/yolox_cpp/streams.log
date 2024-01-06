@@ -1,0 +1,22 @@
+[0.176s] Invoking command in '/home/haru/ros2_ws/src/detector2d/detector2d_plugins/src/build/yolox_cpp': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/haru/ros2_ws/install/realsense2_camera_msgs:/home/haru/ros2_ws/install/py_pubsub:/home/haru/ros2_ws/install/object_detection:/opt/ros/humble /home/haru/.local/bin/cmake /home/haru/ros2_ws/src/detector2d/detector2d_plugins/src/yolox_ros/yolox_ros_cpp/yolox_cpp -DCMAKE_INSTALL_PREFIX=/home/haru/ros2_ws/src/detector2d/detector2d_plugins/src/install/yolox_cpp
+[0.241s] -- The C compiler identification is GNU 11.4.0
+[0.292s] -- The CXX compiler identification is GNU 11.4.0
+[0.307s] -- Detecting C compiler ABI info
+[0.366s] -- Detecting C compiler ABI info - done
+[0.378s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.378s] -- Detecting C compile features
+[0.378s] -- Detecting C compile features - done
+[0.387s] -- Detecting CXX compiler ABI info
+[0.455s] -- Detecting CXX compiler ABI info - done
+[0.470s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.470s] -- Detecting CXX compile features
+[0.471s] -- Detecting CXX compile features - done
+[0.476s] -- Found ament_cmake_auto: 1.3.6 (/opt/ros/humble/share/ament_cmake_auto/cmake)
+[1.251s] -- Found Python3: /usr/bin/python3.10 (found version "3.10.12") found components: Interpreter 
+[1.436s] [31mCMake Error at CMakeLists.txt:29 (message):
+[1.436s]   YOLOX_USE_OPENVINO, YOLOX_USE_TENSORRT, YOLOX_USE_ONNXRUNTIME,
+[1.436s]   YOLOX_USE_TFLITE must be ON at least one
+[1.436s] 
+[1.436s] [0m
+[1.437s] -- Configuring incomplete, errors occurred!
+[1.444s] Invoked command in '/home/haru/ros2_ws/src/detector2d/detector2d_plugins/src/build/yolox_cpp' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/haru/ros2_ws/install/realsense2_camera_msgs:/home/haru/ros2_ws/install/py_pubsub:/home/haru/ros2_ws/install/object_detection:/opt/ros/humble /home/haru/.local/bin/cmake /home/haru/ros2_ws/src/detector2d/detector2d_plugins/src/yolox_ros/yolox_ros_cpp/yolox_cpp -DCMAKE_INSTALL_PREFIX=/home/haru/ros2_ws/src/detector2d/detector2d_plugins/src/install/yolox_cpp

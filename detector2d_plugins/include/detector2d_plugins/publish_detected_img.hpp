@@ -21,30 +21,25 @@
 #include <detector2d_param/detector2d_param.hpp>
 #include <vision_msgs/msg/detection2_d_array.hpp>
 
-namespace detector2d_plugins{
+namespace detector2d_plugins
+{
 
     class publish_detected_img : public detector2d_base::Detector
     {
     public:
         void init(const detector2d_parameters::ParamListener &) override;
         vision_msgs::msg::Detection2DArray detect(const cv::Mat &) override;
-    protected:
-        std::shared_ptr<yolox_parameters::ParamListener> param_listener_;
-        yolox_parameters::Params params_;
-    private:
-        rclcpp::TimerBase::SharedPtr init_timer_;
 
+    protected:
+        std::shared_ptr<yolox_parameters::ParamListener> yolox_params_;
+        yolox_parameters::Params params_;
+
+    private:
         std::unique_ptr<yolox_cpp::AbcYoloX> yolox_;
         std::vector<std::string> class_names_;
 
-        image_transport::Subscriber sub_image_;
-        void colorImageCallback(const sensor_msgs::msg::Image::ConstSharedPtr&);
-
-        rclcpp::Publisher<bboxes_ex_msgs::msg::BoundingBoxes>::SharedPtr pub_bboxes_;
-        image_transport::Publisher pub_image_;
-
         bboxes_ex_msgs::msg::BoundingBoxes objects_to_bboxes(cv::Mat, std::vector<yolox_cpp::Object>, std_msgs::msg::Header);
+        vision_msgs::msg::Detection2DArray objects_to_Detection2DArray(cv::Mat frame, std::vector<yolox_cpp::Object> objects, std_msgs::msg::Header header);
     };
 
-}//namespace detector2d_plugins
-
+} // namespace detector2d_plugins
